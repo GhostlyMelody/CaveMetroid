@@ -1,0 +1,7 @@
+package io;
+
+public class MapReader {
+	public static ArrayList <Entity> readMap () {
+		
+	}
+}

@@ -1,0 +1,30 @@
+package model;
+
+import controller.GameController;
+
+public class GameModel implements Runnable {
+
+	GameController controller;
+
+	boolean updating = false;
+	GameState lastState;
+	GameState currState;
+	
+	@Override
+	public void run() {
+		while (true) {
+			currState = lastState.nextState();
+			updating = true;
+			lastState = currState;
+			updating = false;
+		}
+	}
+
+	public void pause() {
+
+	}
+
+	public void setController(GameController gameController) {
+		controller = gameController;
+	}
+}

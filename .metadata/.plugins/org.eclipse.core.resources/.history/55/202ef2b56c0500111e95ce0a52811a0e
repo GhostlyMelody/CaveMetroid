@@ -1,0 +1,31 @@
+package model;
+
+import java.util.Collection;
+import java.util.Set;
+
+import model.physics.PhysicsManager;
+
+
+public class GameState {
+
+	Set <Entity> gameEntities;
+	
+	PhysicsManager physicsEngine;
+	
+	
+	
+	public GameState update(long timeElapsedMs) {
+		GameState newState = new GameState();
+		
+		
+		
+		return newState;
+	}
+
+
+
+	public Collection <Entity> entities() {
+		// TODO Auto-generated method stub
+	}
+
+}

@@ -1,0 +1,26 @@
+package model;
+
+import controller.GameController;
+
+public class GameModel implements Runnable {
+
+	GameController controller;
+
+	long i = 0;
+
+	public void run() {
+		while (true) {
+			i++;
+			if (i % 100000 == 1)
+				System.out.println(1);
+		}
+	}
+
+	public void pause() {
+
+	}
+
+	public void setController(GameController gameController) {
+		controller = gameController;
+	}
+}

@@ -1,0 +1,44 @@
+package application;
+
+import controller.GameController;
+import model.GameModel;
+import view.GameView;
+import view.GameWindow;
+
+public class Game {
+	public static void main(String[] args) {
+		Game.startGame();
+	}
+	private static void startGame() {
+		//The game consists of a Model of the game
+		//consisting of game entities (e.g. Player, Enemies etc)
+		
+		GameModel model = new GameModel();
+		
+		//The game also consists of the visual representation
+		//of the game, (i.e. an drawing of the game world on the screen)
+		
+		GameView view = new GameView();
+		
+		//The game's view and model are updated using the
+		//controller which accesses the model at a routine
+		//time and updates the view based on information
+		//taken from the model
+		
+		GameController controller = new GameController(model, view);
+
+		//The window will contain the view
+		
+		GameWindow gw = new GameWindow();
+		gw.add(view);
+
+		//The model runs on a separate thread since
+		//its processing is not dependent on the
+		//existence of a view
+		model.run();
+		
+		//The controller runs on a separate thread
+		//accessing the model and modifying the view
+		controller.run();
+	}
+}

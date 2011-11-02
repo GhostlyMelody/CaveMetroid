@@ -1,0 +1,24 @@
+package view;
+
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+
+import model.Sprite;
+import model.entities.Entity;
+
+public class Frame {
+
+	private Image screen;
+	private Position topLeftPos;
+	
+	public Frame(Position topLeft) {
+		screen = new BufferedImage (Constants.WINDOW_WIDTH, Constants.WINDOW_HEIGHT, BufferedImage.TYPE_INT_ARGB);
+	}
+	
+	public void addSprite(Sprite s) {
+		Graphics g = screen.getGraphics();
+		g.
+	}
+
+}

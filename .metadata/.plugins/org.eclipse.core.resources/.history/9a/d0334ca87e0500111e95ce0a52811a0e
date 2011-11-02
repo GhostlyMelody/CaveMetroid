@@ -1,0 +1,16 @@
+package model.entities;
+
+import model.Position;
+import model.Sprite;
+
+
+public interface Entity {
+
+	public Position getPosition();
+	
+	public void update(long timeElapsed);
+
+	public Sprite getSprite();
+	
+	public Entity clone();	
+}

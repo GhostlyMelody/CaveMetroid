@@ -1,0 +1,8 @@
+package model;
+
+
+public interface Entity {
+
+	public void update(long timeElapsed);
+	public Sprite getSprite();
+}

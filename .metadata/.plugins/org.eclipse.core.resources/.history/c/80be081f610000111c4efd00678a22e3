@@ -1,0 +1,19 @@
+package application;
+
+import view.GameWindow;
+
+public class Game {
+	public static void main(String[] args) {
+		Game.startGame();
+	}
+	private static void startGame() {
+		GameModel model = new GameModel();
+		GameView view = new GameView();
+		GameController controller = new GameController(model, view);
+
+		GameWindow gw = new GameWindow();
+		gw.add(view);
+		
+		contoller.startThreads();
+	}
+}

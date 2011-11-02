@@ -1,0 +1,10 @@
+package model;
+
+import java.awt.Graphics2D;
+
+public class Sprite {
+	
+	public void getImage (Graphics2D g) {
+		
+	}
+}

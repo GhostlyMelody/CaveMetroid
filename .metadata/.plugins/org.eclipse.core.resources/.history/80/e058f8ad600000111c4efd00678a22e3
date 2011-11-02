@@ -1,0 +1,44 @@
+package view;
+
+import java.awt.Color;
+
+import javax.swing.JFrame;
+
+import model.GameModel;
+
+import controller.GameController;
+import controller.KeyboardManager;
+import controller.MouseManager;
+
+public class GameWindow extends JFrame {
+
+	private GameController controller;
+	/**
+	 * Version 1.0
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public GameWindow () {
+		super();
+		init();
+	}
+	private void init() {
+		setBackground(Color.BLACK);
+		addKeyListener (KeyboardManager.keyboardListener);
+		addMouseListener (MouseManager.mouseListener);
+		
+		GameModel model = new GameModel();
+		GamePanel panel  = new GamePanel();
+		controller = new GameController (model, panel.getGameView());
+		setSize(Constants.WINDOW_HEIGHT, Constants.WINDOW_WIDTH);
+		setVisible(true);
+	}
+	public void startThreads() {
+		controller.run();
+	}
+	public void pauseThreads() {
+		controller.pause();
+	}
+	
+	
+}

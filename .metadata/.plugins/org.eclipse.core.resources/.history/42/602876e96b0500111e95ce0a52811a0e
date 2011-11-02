@@ -1,0 +1,48 @@
+package view;
+
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+
+import javax.swing.JPanel;
+
+import controller.GameController;
+
+public class GameView extends JPanel {
+
+	/**
+	 * All classes will have the same version so as to keep consistency within all classes.
+	 */
+	private static final long serialVersionUID = Constants.serialVersionUID;
+	
+	private GameController controller;
+	
+	private boolean updating;
+	private Frame currFrame;
+	
+	public GameView () {
+		controller = null;
+		updating = false;
+		currFrame = new Frame();
+	}
+	
+	@Override
+	public void paintComponent(Graphics g1) {
+		super.paintComponent(g1);
+		Graphics2D g = (Graphics2D) g1;
+	}
+	
+	public int width() {
+		return getWidth();
+	}
+	public int height() {
+		return getHeight();
+	}
+
+	public void setController(GameController gameController) {
+		controller = gameController;
+	}
+
+	public void draw(Frame frame) {
+		
+	}
+}

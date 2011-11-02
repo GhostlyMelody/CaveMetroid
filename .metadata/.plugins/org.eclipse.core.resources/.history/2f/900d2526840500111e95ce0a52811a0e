@@ -1,0 +1,12 @@
+package io;
+
+import java.util.ArrayList;
+
+import model.*;
+import model.entities.*;
+
+public class MapReader {
+	public static ArrayList <Entity> readMap (String mapFileName) {
+		
+	}
+}

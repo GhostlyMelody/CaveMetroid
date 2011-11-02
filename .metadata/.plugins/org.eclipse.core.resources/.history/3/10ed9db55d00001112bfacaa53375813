@@ -1,0 +1,30 @@
+package controller;
+
+import model.GameModel;
+import view.GamePanel;
+
+public class GameController {
+	private GameModel model;
+	private GamePanel view;
+	
+	public GameController(GameModel model, GamePanel view) {
+		this.model = model;
+		this.view  = view;
+		init();
+	}
+
+	private void init() {
+		model.setController(this);
+		view.setController(this);
+	}
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void pause() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

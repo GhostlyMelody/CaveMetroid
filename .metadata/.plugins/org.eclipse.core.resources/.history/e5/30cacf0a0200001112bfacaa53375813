@@ -1,0 +1,33 @@
+package view;
+
+import java.awt.Color;
+
+import javax.swing.JFrame;
+
+import controller.KeyboardManager;
+import controller.MouseManager;
+
+public class GameWindow extends JFrame {
+
+	/**
+	 * Version 1.0
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public GameWindow () {
+		super();
+		init();
+	}
+	private void init() {
+		setBackground(Color.BLACK);
+		addKeyListener (KeyboardManager.keyboardListener);
+		addMouseListener (MouseManager.mouseListener);
+		
+	}
+	public void startThreads() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+}

@@ -1,0 +1,31 @@
+package controller;
+
+import model.GameModel;
+import view.GameView;
+
+public class GameController {
+	private GameModel model;
+	private GameView view;
+	
+	public GameController(GameModel model, GameView view) {
+		this.model = model;
+		this.view  = view;
+		init();
+	}
+
+	private void init() {
+		model.setController(this);
+		view.setController(this);
+	}
+	public void run() {
+		Thread m = new Thread (model);
+		Thread v = new Thread (view);
+		m.run();
+		v.run();
+	}
+
+	public void pause() {
+		
+	}
+
+}

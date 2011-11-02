@@ -1,0 +1,12 @@
+package model;
+
+
+public class Entity {
+
+	public Sprite getSprite() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+}

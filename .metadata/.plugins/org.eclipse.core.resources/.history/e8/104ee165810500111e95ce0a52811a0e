@@ -1,0 +1,41 @@
+package model;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.Set;
+
+import model.entities.Entity;
+import model.physics.PhysicsManager;
+
+
+public class GameState {
+
+	Set <Entity> gameEntities;
+	
+	PhysicsManager physicsEngine;
+	
+	
+	
+	public GameState update(long timeElapsedMs) {
+		GameState newState = new GameState();
+		
+		
+		
+		return newState;
+	}
+
+
+	/**
+	 * Returns the entities in order
+	 * of drawing. The background
+	 * elements are in the beginning
+	 * of the list, while the foreground
+	 * elements are at the end.
+	 */
+	
+	public List <Entity> entities() {
+		return new ArrayList <Entity> ();	
+	}
+
+}

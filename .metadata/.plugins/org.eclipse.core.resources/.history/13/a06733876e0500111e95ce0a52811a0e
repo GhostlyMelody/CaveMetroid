@@ -1,0 +1,12 @@
+package model;
+
+import model.Sprite;
+
+
+public interface Entity {
+
+	public void update(long timeElapsed);
+	public Sprite getSprite();
+	public Entity clone();
+	
+}

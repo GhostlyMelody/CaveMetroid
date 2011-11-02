@@ -1,0 +1,35 @@
+package view;
+
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+
+import model.Position;
+import model.Sprite;
+import model.entities.Entity;
+
+public class Frame {
+
+	private Image screen;
+	private Position topLeftPos;
+	private Graphics g;
+	public Frame(Position topLeft) {
+		init(topLeft);
+	}
+	
+	public Frame() {
+		init(new Position());
+	}
+	
+	private void init(Position topLeft) {
+		screen = new BufferedImage (Constants.WINDOW_WIDTH, Constants.WINDOW_HEIGHT, BufferedImage.TYPE_INT_ARGB);
+		topLeftPos = topLeft;
+		g = screen.getGraphics();
+	}
+
+	public void addSprite(Sprite s) {
+		Position onScreenPos = topLeftPos - s.getTopLeftPosition();
+		g.drawImage(sprite.getImage(), onScreenPos.getX(), onScreenPos.getY(), observer);
+	}
+
+}

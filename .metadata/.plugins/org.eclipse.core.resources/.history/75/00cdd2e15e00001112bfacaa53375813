@@ -1,0 +1,21 @@
+package view;
+
+public class GameView implements Runnable {
+	
+	GameController myController;
+	long i = 0;
+	
+	@Override
+	public void run() {
+		while(true) {
+			i++;
+			if (i % 10 == 0)
+				System.out.println(i);
+		}
+	}
+
+	public void setController(GameController gameController) {
+		// TODO Auto-generated method stub
+		
+	}
+}

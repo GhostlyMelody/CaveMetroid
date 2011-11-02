@@ -1,0 +1,46 @@
+package model.entities;
+
+import java.awt.Font;
+
+import model.Position;
+import model.Sprite;
+
+public class TextBox implements Entity {
+
+	private Position myPosition;
+	private String myText;
+	private int myWidth;
+	private Font myFont;
+	
+	public TextBox (Position position, String containedValue, int width, Font font) {
+		myPosition = position;
+		myText = containedValue;
+		myWidth = width;
+		myFont = font;
+	}
+	
+	
+	@Override
+	public void update(long timeElapsed) {
+		
+	}
+	
+	@Override
+	public TextBox clone() {
+		return new TextBox (myPosition, myText, myWidth, myFont);
+	}
+
+	@Override
+	public Sprite getSprite() {
+		
+		return null;
+	}
+
+
+	@Override
+	public Position getPosition() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}

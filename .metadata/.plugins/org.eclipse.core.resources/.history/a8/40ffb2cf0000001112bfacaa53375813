@@ -1,0 +1,11 @@
+package controller;
+
+import java.awt.event.KeyAdapter;
+
+public class KeyboardManager extends KeyAdapter {
+	private static KeyboardManager manager;
+	
+	private KeyboardManager () {
+		
+	}
+}

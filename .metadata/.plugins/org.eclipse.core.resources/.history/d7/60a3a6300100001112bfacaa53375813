@@ -1,0 +1,9 @@
+package controller;
+
+import java.awt.event.MouseAdapter;
+
+public class MouseManager {
+	public static final MouseAdapter keyboardListener = new MouseAdapter () {
+		
+	};
+}

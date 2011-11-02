@@ -1,0 +1,13 @@
+package model;
+
+public class Position {
+	
+	private int x;
+	private int y;
+
+	public Position minus(Position topLeftPosition) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

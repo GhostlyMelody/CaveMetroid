@@ -1,0 +1,51 @@
+package view;
+
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+
+import javax.swing.JPanel;
+
+public abstract class GamePanel extends JPanel {
+
+	/**
+	 * All classes will have the same version so as to keep consistency within all classes.
+	 */
+	private static final long serialVersionUID = Constants.serialVersionUID;
+	
+	
+	private class Updater implements Runnable {
+		public void run() {
+			// TODO Auto-generated method stub
+			
+		}
+	};
+	
+
+	private Runnable gameUpdater;	
+	protected Graphics2D graphicsTool;
+	
+	public GamePanel () {
+		gameUpdater = new Updater();
+	}
+	
+	public abstract void update(double secondsElapsed);
+
+	public abstract void draw();
+	
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		graphicsTool = (Graphics2D) g;
+		draw();
+	}
+	
+	public int width() {
+		return getWidth();
+	}
+	public int height() {
+		return getHeight();
+	}
+
+	public void run() {
+		gameUpdater.run();
+	}
+}

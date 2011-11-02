@@ -1,0 +1,12 @@
+package controller;
+
+import model.GameModel;
+import view.GamePanel;
+
+public class GameController {
+
+	public GameController(GameModel model, GamePanel view) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

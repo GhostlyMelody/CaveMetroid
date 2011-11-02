@@ -1,0 +1,13 @@
+package model;
+
+import java.util.Set;
+
+public class GameState {
+
+	Set <Entity> gameEntities;
+	
+	public GameState udpate() {
+		
+	}
+
+}

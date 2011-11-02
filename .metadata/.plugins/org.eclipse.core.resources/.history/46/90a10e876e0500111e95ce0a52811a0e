@@ -1,0 +1,12 @@
+package view;
+
+import model.Entity;
+import model.Sprite;
+
+public class Frame {
+
+	public void addEntity(Sprite s) {
+		
+	}
+
+}

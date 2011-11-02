@@ -1,0 +1,31 @@
+package controller;
+
+import model.GameModel;
+import view.GameView;
+
+public class GameController implements Runnable {
+	private GameModel model;
+	private GameView view;
+	
+	public GameController(GameModel model, GameView view) {
+		this.model = model;
+		this.view  = view;
+		init();
+	}
+
+	private void init() {
+		model.setController(this);
+		view.setController(this);
+	}
+	
+	private static int i = 0;
+	
+	@Override
+	public void run() {
+		System.out.println((i+=2) % 2 == 0);
+	}
+
+	public void pause() {
+		
+	}
+}

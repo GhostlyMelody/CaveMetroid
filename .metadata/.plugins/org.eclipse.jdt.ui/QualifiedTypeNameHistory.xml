@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="javax.swing.JFrame"/>
+<fullyQualifiedTypeName name="application.Constants"/>
+<fullyQualifiedTypeName name="model.GameModel"/>
+<fullyQualifiedTypeName name="controller.GameController"/>
+<fullyQualifiedTypeName name="view.GameView"/>
+<fullyQualifiedTypeName name="java.lang.Override"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
+<fullyQualifiedTypeName name="model.GameState"/>
+</qualifiedTypeNameHistroy>

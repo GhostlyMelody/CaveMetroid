@@ -1,0 +1,40 @@
+package view;
+
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+
+import model.Position;
+import model.Sprite;
+import model.entities.Entity;
+
+public class Frame {
+	/**
+	 * All classes will have the same version so as to keep consistency within all classes.
+	 */
+	private static final long serialVersionUID = Constants.serialVersionUID;
+	
+	private Image screen;
+	private Position topLeftPos;
+	private Graphics g;
+	public Frame(Position topLeft) {
+		init(topLeft);
+	}
+	
+	public Frame() {
+		init(new Position(0, 0));
+	}
+	
+	private void init(Position topLeft) {
+		screen = new BufferedImage (Constants.WINDOW_WIDTH, Constants.WINDOW_HEIGHT, BufferedImage.TYPE_INT_ARGB);
+		topLeftPos = topLeft;
+		g = screen.getGraphics();
+	}
+
+	public void addSprite(Position position, Sprite sprite) {
+		Position onScreenPos = topLeftPos.minus(sprite.getTopLeftPosition());
+		if (onScreenPos.isPositive())
+			g.drawImage(sprite.getImage(), onScreenPos.getX(), onScreenPos.getY(), null);
+	}
+
+}

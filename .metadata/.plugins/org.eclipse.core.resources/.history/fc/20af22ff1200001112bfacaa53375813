@@ -1,0 +1,18 @@
+package model;
+
+public class GameModel implements Runnable {
+
+	GameController controller;
+	
+	public void run() {
+
+	}
+
+	public void pause() {
+		
+	}
+
+	public void setController(GameController gameController) {
+		controller = gameController;
+	}
+}

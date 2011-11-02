@@ -1,0 +1,79 @@
+package model;
+
+import controller.GameController;
+
+/**
+ * The game model continually updates the game
+ * by constructing a new state that is an updated
+ * version of the last state.
+ */
+public class GameModel implements Runnable {
+
+	GameController controller;
+
+	boolean running;
+	
+	long lastTime;
+	
+	GameState lastState;
+	GameState currState;
+	
+	public GameModel () {
+		lastState = new GameState();
+		currState = new GameState();
+
+		running = true;
+		
+		lastTime = System.currentTimeMillis();
+	}
+	
+	@Override
+	public void run() {
+		while (running) {
+			long timeElapsed = System.nanoTime() - lastTime;
+			lastTime = System.nanoTime();
+			
+			double timeElapsedInSecs = timeElapsed / 1000000.0;
+			
+			currState = lastState.update(timeElapsedInSecs);
+			
+			//Frame rate
+			//System.out.println( "Time: " + (1/timeElapsedInSecs) );
+			
+			/*
+			 * During this stage,
+			 * the previous state needs
+			 * to be updated, only
+			 * after which, access
+			 * to the state can occur.
+			 */
+			
+			updateState();
+		}
+	}
+
+	private synchronized void updateState() {
+		lastState = currState;
+	}
+	public void pause() {
+		running = false;
+	}
+	
+	public void resume() {
+		running = true;
+	}
+
+	public void setController(GameController gameController) {
+		controller = gameController;
+	}
+	
+	public synchronized GameState getState() {
+		/*
+		 * GameController calls
+		 * this method requesting the
+		 * state, but has to wait until
+		 * the updating is finished.
+		 */
+		return lastState;
+	}
+}

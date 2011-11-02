@@ -1,0 +1,17 @@
+package controller;
+
+import java.awt.event.MouseAdapter;
+
+public class MouseManager {
+	public static final MouseAdapter mouseListener = new MouseAdapter () {
+		
+	};
+	
+	private MouseState currentState;
+	private MouseState previousState;
+	
+	public void update() {
+		previousState = currentState;
+		currentState = currentState.clone();
+	}
+}

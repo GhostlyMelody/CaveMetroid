@@ -1,0 +1,22 @@
+package model;
+
+import controller.GameController;
+
+public class GameModel implements Runnable {
+
+	GameController controller;
+
+	long i = 0;
+
+	public void run() {
+		
+	}
+
+	public void pause() {
+
+	}
+
+	public void setController(GameController gameController) {
+		controller = gameController;
+	}
+}

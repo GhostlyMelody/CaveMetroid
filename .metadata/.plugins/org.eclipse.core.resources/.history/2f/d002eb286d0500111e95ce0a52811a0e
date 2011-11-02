@@ -1,0 +1,12 @@
+package model;
+
+import view.Sprite;
+
+public class Entity {
+
+	public Sprite getSprite() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

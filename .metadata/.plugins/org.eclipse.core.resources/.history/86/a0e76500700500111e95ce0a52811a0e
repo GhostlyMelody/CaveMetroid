@@ -1,0 +1,13 @@
+package view;
+
+import model.Sprite;
+import model.entities.Entity;
+
+public class Frame {
+
+	private Image screen;
+	public void addEntity(Sprite s) {
+		
+	}
+
+}

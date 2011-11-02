@@ -1,0 +1,9 @@
+package io;
+
+import model.entities.*;
+
+public class EntityReader {
+	public static Entity readEntity (String line) {
+		
+	}
+}

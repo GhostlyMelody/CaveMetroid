@@ -1,0 +1,25 @@
+package view;
+
+import java.awt.Color;
+import java.awt.image.BufferedImage;
+
+public final class GraphicsConstants {
+
+	public static final double GAME_FPS;
+	
+	public static final double SPLASH_SCREEN_TIME_IN_SECONDS;
+	
+	public static final int BUFFERED_IMAGE_TYPE;
+	
+	public static final Color BACKGROUND_COLOR;
+	
+	static {
+		GAME_FPS = 60.0;
+		
+		SPLASH_SCREEN_TIME_IN_SECONDS = 2.0;
+		
+		BUFFERED_IMAGE_TYPE = BufferedImage.TYPE_INT_ARGB;
+		
+		BACKGROUND_COLOR = Color.red;
+	}
+}

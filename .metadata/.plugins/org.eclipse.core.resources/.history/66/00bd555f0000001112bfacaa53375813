@@ -1,0 +1,19 @@
+package view;
+
+import javax.swing.JFrame;
+
+public class GameWindow extends JFrame {
+
+	/**
+	 * Version 1.0
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public GameWindow () {
+		super();
+		init();
+	}
+	private void init() {
+		
+	}
+}

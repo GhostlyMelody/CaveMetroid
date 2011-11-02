@@ -1,0 +1,51 @@
+package controller;
+
+import model.GameModel;
+import model.GameState;
+import view.Frame;
+import view.GameView;
+
+public class GameController implements Runnable {
+	private GameModel model;
+	private GameView view;
+	
+	public GameController(GameModel model, GameView view) {
+		this.model = model;
+		this.view  = view;
+		init();
+	}
+
+	private void init() {
+		model.setController(this);
+		view.setController(this);
+	}
+	
+	private static int i = 0;
+	
+	@Override
+	public void run() {
+		while (true) {
+			/*
+			 * Takes the game model's information
+			 * from the current state and
+			 * draws the entities into the
+			 * view using the information within
+			 * each entitiy.
+			 */
+			
+			GameState currState = model.getState();
+			Frame currFrame = generateFrame(currState);
+			view.draw(currFrame);
+		}
+	}
+
+	private Frame generateFrame(GameState state) {
+		Frame f = new Frame();
+		
+		
+		return f;
+	}
+	public void pause() {
+		
+	}
+}

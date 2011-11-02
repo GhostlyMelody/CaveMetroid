@@ -1,0 +1,16 @@
+package view;
+
+public class Constants {
+	public static final long serialVersionUID = application.Constants.serialVersionUID;
+	
+	public static final int WINDOW_HEIGHT;
+	public static final int WINDOW_WIDTH;
+
+	public static int MONITOR_HEIGHT;
+	public static int MONITOR_WIDTH;
+	
+	static {
+		WINDOW_HEIGHT = 800;
+		WINDOW_WIDTH = 800;
+	}
+}

@@ -1,0 +1,14 @@
+package view;
+
+public class GameView extends Runnable {
+	long i = 0;
+	
+	@Override
+	public void run() {
+		while(true) {
+			i++;
+			if (i % 10 == 0)
+				System.out.println(i);
+		}
+	}
+}

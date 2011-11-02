@@ -1,0 +1,44 @@
+package model;
+
+import controller.GameController;
+
+/**
+ * 
+ * @author Kaushik
+ *
+ * The game model continually updates the game
+ * by constructing a new state that is an updated
+ * version of the last state.
+ */
+public class GameModel implements Runnable {
+
+	GameController controller;
+
+	boolean updating = false;
+	GameState lastState;
+	GameState currState;
+	
+	@Override
+	public void run() {
+		
+		while (true) {
+			currState = lastState.update();
+			updating = true;
+			lastState = currState;
+			updating = false;
+		}
+	}
+
+	public void pause() {
+
+	}
+
+	public void setController(GameController gameController) {
+		controller = gameController;
+	}
+	
+	public GameState getState() {
+		while (updating);
+		return lastState;
+	}
+}
